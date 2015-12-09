@@ -33,6 +33,9 @@ const (
 
 var re = regexp.MustCompile("github.com/(.*)/(.*)/(.*)/(.*):(.*)")
 
+// RE for Registry that does not support versions and can have multiple files without imports.
+var re2 = regexp.MustCompile("github.com/(.*)/(.*)/(.*)")
+
 // TypeResolver finds Types in a Configuration which aren't yet reduceable to an import file
 // or primitive, and attempts to replace them with a template from a URL.
 type TypeResolver interface {
